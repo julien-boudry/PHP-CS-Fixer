@@ -859,6 +859,16 @@ var_dump(Foo::CAT->test());',
                 PHP,
         ];
 
+        yield 'asymmetric visibility + readonly' => [
+            <<<'PHP'
+                <?php
+                class Foo
+                {
+                    public private(set) readonly int $bar;
+                }
+                PHP
+        ];
+
         yield 'property hooks' => [
             <<<'PHP'
                 <?php
